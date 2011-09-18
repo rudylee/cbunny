@@ -1,6 +1,7 @@
 # cbunny ( Cake Bunny ) #
 
 cbunny is a CakePHP app for demo purposes. Here is the demos list :
+
 * jQuery autoComplete in CakePHP http://cbunny.rudylee.com/autocomplete
 * to be continued...
 
