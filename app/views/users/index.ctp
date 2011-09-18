@@ -44,6 +44,7 @@
 	</div>
 </div>
 <div class="actions">
+Auto Complete Demo
 <?php
     echo $this->Ajax->autoComplete('User.search', array(
 	'source' => array(
