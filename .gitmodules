@@ -1,3 +1,0 @@
-[submodule "app/plugins/topping"]
-	path = app/plugins/topping
-	url = git@github.com:rudylee/topping.git
