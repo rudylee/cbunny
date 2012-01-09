@@ -9,5 +9,6 @@ cbunny is a CakePHP app for demo purposes. Here is the demos list :
 * Download or clone this project
 * Create new database
 * Import cbunny.sql into new database
+* Rename config/database.php.default into database.php
 * Configure your config/database.php
 * Run the app
