@@ -26,6 +26,26 @@ class UsersController extends AppController {
 	echo json_encode($this->_encode($users));
     }
     
+    function index_redirect() {
+	$this->User->recursive = 0;
+	$this->set('users', $this->paginate());
+    }
+    
+    function autoComplete_redirect() {
+	if (!empty($this->data)) {
+	    $this->redirect(array(
+		'controller' => 'users',
+		'action' => 'view', $this->data['User']['id']
+	    ));
+	}
+	$this->autoRender = false;
+	$users = $this->User->find('all', array(
+	    'conditions' => array(
+		'User.username LIKE' => '%' . $_GET['term'] . '%',
+		)));
+	echo json_encode($this->_encode($users));
+    }
+    
     function _encode($postData) {
 	$temp = array();
 	foreach ($postData as $user) {
