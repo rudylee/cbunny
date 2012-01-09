@@ -3,6 +3,7 @@
 cbunny is a CakePHP app for demo purposes. Here is the demos list :
 
 * jQuery autoComplete in CakePHP http://cbunny.rudylee.com/autocomplete
+* jQuery autoComplete Redirect in CakePHP http://cbunny.rudylee.com/autocomplete_redirect
 * to be continued...
 
 # Tutorial #

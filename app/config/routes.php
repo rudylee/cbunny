@@ -28,6 +28,7 @@
  */
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
 	Router::connect('/autocomplete', array('controller' => 'users', 'action' => 'index'));
+	Router::connect('/autocomplete_redirect', array('controller' => 'users', 'action' => 'index_redirect'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
