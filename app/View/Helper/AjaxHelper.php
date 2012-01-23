@@ -205,7 +205,7 @@ class AjaxHelper extends AppHelper {
 	    'autoFill', 'cacheLength', 'delay', 'extraParams', 'formatItem', 'formatMatch', 
 	    'formatResult', 'highlight', 'matchCase', 'matchContains', 'matchSubset', 'max', 
 	    'minChars', 'multiple', 'multipleSeparator', 'mustMatch', 'scroll', 'scrollHeight', 
-	    'selectFirst', 'width'
+	    'selectFirst', 'width', 'select', 'source'
 	);
 /**
  * Output buffer for Ajax update content
@@ -1395,6 +1395,68 @@ class AjaxHelper extends AppHelper {
 			$this->_stop();
 		}
 	}
+	
+/**
+     * Create a text field with Jquery UI Autocomplete.
+     *
+     * Creates an autocomplete field with the given ID and options.
+     * needs include jQuery UI Autocomplete file
+     *
+     * @param string $field DOM ID of field to observe
+     * @param array $options Ajax options
+     * @return string Ajax script
+     * check out http://jqueryui.com/demos/autocomplete/
+     */
+    function autoComplete_ui($field, $options = array()) {
+	$var = '';
+	if (isset($options['var'])) {
+	    $var = 'var ' . $options['var'] . ' = ';
+	    unset($options['var']);
+	}
+ 
+	if(isset($options['source'])) {
+	    $options['source'] = "'".Router::url($options['source'])."'";
+	}
+ 
+	if (!isset($options['id'])) {
+	    $options['id'] = Inflector::camelize(str_replace(".", "_", $field));
+	}
+ 
+	$htmlOptions = $this->__getHtmlOptions($options);
+	$htmlOptions['autocomplete'] = "off";
+ 
+	foreach ($this->autoCompleteOptions as $opt) {
+	    unset($htmlOptions[$opt]);
+	}
+ 
+	$options = $this->_optionsToString($options, array('multipleSeparator'));
+	$callbacks = array('formatItem', 'formatMatch', 'formatResult', 'highlight');
+ 
+	foreach ($callbacks as $callback) {
+	    if (isset($options[$callback])) {
+		$name = $callback;
+		$code = $options[$callback];
+		switch ($name) {
+		    case 'formatResult':
+			$options[$name] = "function(data, i, max) {" . $code . "}";
+			break;
+		    case 'highlight':
+			$options[$name] = "function(data, search) {" . $code . "}";
+			break;
+		    default:
+			$options[$name] = "function(row, i, max, term) {" . $code . "}";
+			break;
+		}
+	    }
+	}
+	$options = $this->_buildOptions($options, $this->autoCompleteOptions);
+ 
+	$text = $this->Form->text($field, $htmlOptions);
+	$script = "{$var} $('#{$htmlOptions['id']}').autocomplete(";
+	$script .= "{$options});";
+ 
+	return "{$text}\n" . $this->Javascript->codeBlock($script);
+    }
 }
 
 ?>

@@ -32,5 +32,27 @@ class UsersController extends AppController {
 	}
 	$this->set('user', $this->User->read(null, $id));
     }
+    
+    public function autoComplete() {
+	$this->autoRender = false;
+	$users = $this->User->find('all', array(
+	    'conditions' => array(
+		'User.username LIKE' => '%' . $_GET['term'] . '%',
+		)));
+	echo json_encode($this->_encode($users));
+    }
+    
+    private function _encode($postData) {
+	$temp = array();
+	foreach ($postData as $user) {
+	    array_push($temp, array(
+		'id' => $user['User']['id'],
+		'label' => $user['User']['username'],
+		'value' => $user['User']['username'],
+	    ));
+	}
+	return $temp;
+    }
+    
 
 }

@@ -41,5 +41,17 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
+	    <li>
+		Auto Complete Demo
+		<br />
+		<?php
+		    echo $this->Ajax->autoComplete_ui('User.search', array(
+			'source' => array(
+			    'controller' => 'users',
+			    'action' => 'autoComplete',
+			),
+		    ));
+		?>
+	    </li>
 	</ul>
 </div>
