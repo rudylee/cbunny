@@ -1,4 +1,4 @@
-# cbunny ( Cake Bunny ) #
+# cbunny ( CakePHP v1.3.10 Bunny ) #
 
 cbunny is a CakePHP app for demo purposes. Here is the demos list :
 
