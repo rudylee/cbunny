@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # cbunny ( CakePHP v1.3.10 Bunny ) #
 
 cbunny is a CakePHP app for demo purposes. Here is the demos list :
@@ -13,3 +14,10 @@ cbunny is a CakePHP app for demo purposes. Here is the demos list :
 * Rename config/database.php.default into database.php
 * Configure your config/database.php
 * Run the app
+=======
+# cbunny ( CakePHP 2.0 Bunny ) #
+
+cbunny is a CakePHP app for demo purposes. Here is the demos list :
+
+* none at the moment.
+>>>>>>> 52c9a019fa5dc56bd9fd526746d42dd5b78fed5d
