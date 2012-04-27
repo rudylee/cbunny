@@ -1,6 +1,25 @@
 <div class="users index">
+	
+	Auto Complete Redirect Demo
+	<?php
+	    echo $this->Form->create('autoComplete',array('url' => array('controller' => 'users', 'action' => 'autoComplete_redirect'),'id' => 'UserForm'));
+	    echo $this->Form->hidden('User.id');
+	    echo $this->Ajax->autoComplete('User.search', array(
+		'source' => array(
+		    'controller' => 'users',
+		    'action' => 'autoComplete_redirect',
+		),
+		'select' => 'function(event, ui){
+		    $("#UserId").val(ui.item.id);
+		    $("#UserForm").submit()}'
+	    ));
+	?>
+	<p>
+		jQuery UI Auto Complete will redirect user when they click the search result. Click <a href="http://blog.rudylee.com/2011/12/12/auto-redirect-in-cakephp-jquery-autocomplete/" target="_blank">here</a> for complete tutorial.
+	</p>
+	</form>
 	<h2><?php __('Users');?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<table cellpadding="0" cellspacing="0" class="table">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('username');?></th>
@@ -29,34 +48,7 @@
 	</tr>
 <?php endforeach; ?>
 	</table>
-	<p>
-	<?php
-	echo $this->Paginator->counter(array(
-	'format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%', true)
-	));
-	?>	</p>
-
-	<div class="paging">
-		<?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
-	 | 	<?php echo $this->Paginator->numbers();?>
- |
-		<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
-	</div>
 </div>
 <div class="actions">
-Auto Complete Redirect Demo
-<?php
-    echo $this->Form->create('autoComplete',array('url' => array('controller' => 'users', 'action' => 'autoComplete_redirect'),'id' => 'UserForm'));
-    echo $this->Form->hidden('User.id');
-    echo $this->Ajax->autoComplete('User.search', array(
-	'source' => array(
-	    'controller' => 'users',
-	    'action' => 'autoComplete_redirect',
-	),
-	'select' => 'function(event, ui){
-	    $("#UserId").val(ui.item.id);
-	    $("#UserForm").submit()}'
-    ));
-?>
-</form>
+
 </div>

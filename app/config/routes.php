@@ -26,7 +26,7 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/views/pages/home.ctp)...
  */
-	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
+	Router::connect('/', array('controller' => 'dashboards', 'action' => 'index'));
 	Router::connect('/autocomplete', array('controller' => 'users', 'action' => 'index'));
 	Router::connect('/autocomplete_redirect', array('controller' => 'users', 'action' => 'index_redirect'));
 /**

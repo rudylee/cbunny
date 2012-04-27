@@ -21,31 +21,27 @@
 
 		echo $scripts_for_layout;
 	?>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-    </style>
 </head>
 <body>
-	<?php echo $this->element('navigation'); ?>
+	<div id="container">
+		<div id="header">
+			<h1><?php echo $this->Html->link(__('CakePHP: the rapid development php framework', true), 'http://cakephp.org'); ?></h1>
+		</div>
+		<div id="content">
 
-	<div class="container">
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $content_for_layout; ?>
 
-	<footer class="footer">
-		<?php echo $this->Html->link(
-				$this->Html->image('cake.power.gif', array('alt'=> __('CakePHP: the rapid development php framework', true), 'border' => '0')),
+		</div>
+		<div id="footer">
+			<?php echo $this->Html->link(
+					$this->Html->image('cake.power.gif', array('alt'=> __('CakePHP: the rapid development php framework', true), 'border' => '0')),
 					'http://www.cakephp.org/',
 					array('target' => '_blank', 'escape' => false)
 				);
-		?>
-	</footer>
+			?>
+		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
 </body>
