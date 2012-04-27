@@ -2,4 +2,5 @@
 /app/tmp
 /plugins
 /vendors
+deploy.yml
 deploy2.yml
