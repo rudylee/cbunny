@@ -38,6 +38,12 @@
                 )); 
               ?>
             </li>
+            <li>
+              <?php echo $this->Html->link('Cake Bunny 2.0','http://www.rudylee.com/cbunny2/'); ?>
+            </li>
+            <li>
+              <?php echo $this->Html->link('Github','https://github.com/rudylee/cbunny'); ?>
+            </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

@@ -13,7 +13,7 @@
 	  </p>
 	</div>
 	<div class="span4">
-	  <h2>jQuery UI Auto Complete</h2>
+	  <h2>jQuery UI Auto Complete Redirect</h2>
 	   <p>Pretty much similar with jQuery UI Auto Complete live example. However, I added redirect feature when someone click the search result. </p>
 	  <p>
 	  	<?php echo $this->Html->link('Live Demo',array('controller' => 'users','action' => 'index_redirect'),array('class' => 'btn')) ?>
