@@ -16,7 +16,7 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-$cakeDescription = __d('cake_dev', 'Cake Bunny ');
+$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -30,7 +30,7 @@ $cakeDescription = __d('cake_dev', 'Cake Bunny ');
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css(array(
-		    '/bootstrap/css/bootstrap.min',
+		    'cake.generic',
 		    'jquery-ui-1.8.4.custom'
 		));
 		
@@ -43,28 +43,26 @@ $cakeDescription = __d('cake_dev', 'Cake Bunny ');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
-	<style type="text/css">
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-    </style>
 </head>
 <body>
-	<?php echo $this->element('navigation'); ?>
+	<div id="container">
+		<div id="header">
+			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+		</div>
+		<div id="content">
 
-	<div class="container">
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>
-		<footer class="footer">
+		</div>
+		<div id="footer">
 			<?php echo $this->Html->link(
 					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
 					'http://www.cakephp.org/',
 					array('target' => '_blank', 'escape' => false)
 				);
 			?>
-		</footer>
+		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
 </body>

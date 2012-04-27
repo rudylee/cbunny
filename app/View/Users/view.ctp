@@ -1,14 +1,11 @@
-<div class="users view">
-<h2><?php  echo __('User');?></h2>
+<div class="row">
+	<div class="span12">
+		<?php echo $this->Html->link(__('Back'), array('action' => 'index')); ?>
+<h2><?php echo h($user['User']['username']);?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
 		<dd>
 			<?php echo h($user['User']['id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Username'); ?></dt>
-		<dd>
-			<?php echo h($user['User']['username']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Password'); ?></dt>
@@ -27,10 +24,4 @@
 			&nbsp;
 		</dd>
 	</dl>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?> </li>
-	</ul>
 </div>
