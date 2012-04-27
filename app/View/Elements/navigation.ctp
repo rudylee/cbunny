@@ -35,6 +35,9 @@
                 echo $this->Html->link('Cake Bunny 1.0','http://www.rudylee.com/cbunny'); 
               ?>
             </li>
+            <li>
+              <?php echo $this->Html->link('Github','https://github.com/rudylee/cbunny/tree/2.0'); ?>
+            </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
