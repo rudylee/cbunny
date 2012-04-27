@@ -3,7 +3,7 @@
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php __('CakePHP: the rapid development php framework:'); ?>
+		<?php __('Cake Bunny: '); ?>
 		<?php echo $title_for_layout; ?>
 	</title>
 	<?php
