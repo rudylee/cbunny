@@ -22,13 +22,29 @@
                   ));
               ?>
             </li>
-            <li>
-              <?php 
-                echo $this->Html->link('Auto Complete',array(
-                  'controller' => 'users', 
-                  'action' => 'index'
-                )); 
-              ?>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Auto Complete
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <?php 
+                    echo $this->Html->link('jQuery UI',array(
+                      'controller' => 'users', 
+                      'action' => 'index'
+                    )); 
+                  ?>
+                </li>
+                <li>
+                  <?php 
+                    echo $this->Html->link('Select2',array(
+                      'controller' => 'users', 
+                      'action' => 'select2'
+                    )); 
+                  ?>
+                </li>
+              </ul>
             </li>
             <li>
               <?php 

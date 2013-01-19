@@ -1,15 +1,11 @@
 <div class="row">
     <div class="span12">
-    Auto Complete Demo
-    <br />
-    <?php
-        echo $this->Ajax->autoComplete_ui('User.search', array(
-            'source' => array(
-                'controller' => 'users',
-                'action' => 'autoComplete',
-            ),
-        ));
-    ?>
+    
+    <!-- Select2 Auto Complete -->
+    <div class="pull-right">
+        <input type="text" id="user-select2">
+    </div>
+
     <h2><?php echo __('Users');?></h2>
     <table class="table"cellpadding="0" cellspacing="0">
         <thead>
