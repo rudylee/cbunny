@@ -46,6 +46,8 @@ class UsersController extends AppController {
     }
 
     public function search() {
+        $this->autoRender = false;
+
         // get the search term from URL
         $term = $this->request->query['q'];
         $users = $this->User->find('all',array(
@@ -62,7 +64,34 @@ class UsersController extends AppController {
         }
         $users = $result;
         
-        $this->set(compact('users'));
+        echo json_encode($users);
+    }
+
+    public function typeahead() {
+        $this->User->recursive = 0;
+        $this->set('users', $this->paginate());       
+    }
+
+    public function typeahead_search() {
+        $this->autoRender = false;
+        $this->RequestHandler->respondAs('json');
+
+        // get the search term from URL
+        $term = $this->request->query['q'];
+        $users = $this->User->find('all',array(
+            'conditions' => array(
+                'User.username LIKE' => '%'.$term.'%'
+            )
+        ));
+
+        // Format the result for select2
+        $result = array();
+        foreach($users as $key => $user) {
+            array_push($result, $user['User']['username']);
+        }
+        $users = $result;
+        
+        echo json_encode($users);
     }
 
 }

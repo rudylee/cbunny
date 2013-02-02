@@ -18,4 +18,18 @@ $(document).ready(function () {
     }
   });
 
+  $('#user-typeahead').typeahead({
+    source: function (query, process) {
+      return $.ajax({
+        url: CbunnyObj.APP_PATH + 'users/typeahead_search',
+        type: 'get',
+        data: {q: query},
+        dataType: 'json',
+        success: function (json) {
+          return process(json);
+        }
+      });
+    }
+  });
+
 });
