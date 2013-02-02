@@ -46,6 +46,7 @@ class UsersController extends AppController {
     }
 
     public function search() {
+        // get the search term from URL
         $term = $this->request->query['q'];
         $users = $this->User->find('all',array(
             'conditions' => array(
@@ -53,6 +54,7 @@ class UsersController extends AppController {
             )
         ));
 
+        // Format the result for select2
         $result = array();
         foreach($users as $key => $user) {
             $result[$key]['id'] = (int) $user['User']['id'];

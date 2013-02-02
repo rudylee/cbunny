@@ -12,4 +12,12 @@
 	  	<a href="http://blog.rudylee.com/2011/07/25/jquery-ui-autocomplete-in-cakephp/" target="_blank" class="btn btn-primary">Tutorial</a>
 	  </p>
 	</div>
+	<div class="span4">
+	  <h2>Select2 Auto Complete</h2>
+	   <p>Live example of integration between Select2 and CakePHP</p>
+	  <p>
+	  	<?php echo $this->Html->link('Live Demo',array('controller' => 'users','action' => 'select2'),array('class' => 'btn')) ?>
+	  	<a href="http://blog.rudylee.com/2011/07/25/jquery-ui-autocomplete-in-cakephp/" target="_blank" class="btn btn-primary">Tutorial</a>
+	  </p>
+	</div>
 </div>
