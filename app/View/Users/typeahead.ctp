@@ -3,7 +3,7 @@
     
     <!-- Typeahead Auto Complete -->
     <div class="pull-right">
-        <input type="text" data-provide="typeahead" id="user-typeahead">
+        <input type="text" data-provide="typeahead" placeholder="Type username from below" id="user-typeahead">
     </div>
 
     <h2><?php echo __('Users');?></h2>
