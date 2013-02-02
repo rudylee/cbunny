@@ -25,7 +25,7 @@
 	   <p>Live example of integration between Boostrap Typeahead and CakePHP</p>
 	  <p>
 	  	<?php echo $this->Html->link('Live Demo',array('controller' => 'users','action' => 'typeahead'),array('class' => 'btn')) ?>
-	  	<a href="http://blog.rudylee.com/2013/02/02/select2-ajax-auto-complete-with-cakephp-2-0/" target="_blank" class="btn btn-primary">Tutorial</a>
+	  	<a href="http://blog.rudylee.com/2013/02/02/bootstrap-typeahead-cakephp-2-0/" target="_blank" class="btn btn-primary">Tutorial</a>
 	  </p>
 	</div>
 </div>
